@@ -1,4 +1,4 @@
-package main.java.strategy;
+package main.java.strategy.BotStrategies;
 
 import main.java.models.Move;
 

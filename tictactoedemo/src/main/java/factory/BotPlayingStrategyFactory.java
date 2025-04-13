@@ -1,10 +1,10 @@
 package main.java.factory;
 
 import main.java.enums.BotDifficultyLevel;
-import main.java.strategy.BotPlayingStrategy;
-import main.java.strategy.EasyBotPlayingStrategy;
-import main.java.strategy.HardBotPlayingStrategy;
-import main.java.strategy.MediumBotPlayingStrategy;
+import main.java.strategy.BotStrategies.BotPlayingStrategy;
+import main.java.strategy.BotStrategies.EasyBotPlayingStrategy;
+import main.java.strategy.BotStrategies.HardBotPlayingStrategy;
+import main.java.strategy.BotStrategies.MediumBotPlayingStrategy;
 
 public class BotPlayingStrategyFactory {
 

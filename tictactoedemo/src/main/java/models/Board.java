@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Board {
     private List<List<Cell>> board;
-    private int dimenstion;
+    private int dimension;
 
-    public Board(int dimenstion) {
-        this.dimenstion = dimenstion;
+    public Board(int dimension) {
+        this.dimension = dimension;
         board = new ArrayList<>();
 
-        for (int i = 0; i < dimenstion; i++) {
+        for (int i = 0; i < dimension; i++) {
             board.add(new ArrayList<>());
-            for (int j = 0; j < dimenstion; j++) {
+            for (int j = 0; j < dimension; j++) {
                 board.get(i).add(new Cell(i, j));
             }
         }
@@ -27,11 +27,11 @@ public class Board {
         this.board = board;
     }
 
-    public int getDimenstion() {
-        return dimenstion;
+    public int getDimension() {
+        return dimension;
     }
 
-    public void setDimenstion(int dimenstion) {
-        this.dimenstion = dimenstion;
+    public void setDimension(int dimenstion) {
+        this.dimension = dimenstion;
     }
 }
