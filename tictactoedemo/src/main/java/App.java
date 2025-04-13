@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.java.contollers.GameController;
+import main.java.enums.BotDifficultyLevel;
 import main.java.enums.GameState;
 import main.java.enums.PlayerType;
+import main.java.models.Bot;
 import main.java.models.Player;
 import main.java.models.Symbol;
 import main.java.strategy.WinningStrategies.ColumnWinningStrategy;
@@ -18,7 +20,7 @@ public class App {
 
         List<Player> players = new ArrayList<>();
         players.add(new Player("Anshul", new Symbol('A', null), PlayerType.HUMAN));
-        players.add(new Player("Rahul", new Symbol('R', null), PlayerType.HUMAN));
+        players.add(new Bot("Rahul", new Symbol('R', null), BotDifficultyLevel.EASY));
 
         var gameController = new GameController();
 
@@ -35,6 +37,7 @@ public class App {
             gameController.makeMove(game);
         }
 
+        game.printBoard();
         if (game.getGameState().equals(GameState.ENDED))
             System.out.println("Winner is " + game.getWinner().getName());
         else

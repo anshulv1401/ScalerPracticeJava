@@ -17,7 +17,7 @@ public class Player {
         this.playerType = playerType;
     }
 
-    public Cell chooseCellToPlay() {
+    public Cell chooseCellToPlay(Board board) {
 
         System.out.println("Enter the row number where you want to play?");
         var inputRow = scanner.nextInt();

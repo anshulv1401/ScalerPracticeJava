@@ -32,7 +32,7 @@ public class Game {
         var currPlayer = players.get(nextPlayerTurnIndex);
         System.out.println("It's " + currPlayer.getName() + "'s turn");
 
-        var dummyCell = currPlayer.chooseCellToPlay();
+        var dummyCell = currPlayer.chooseCellToPlay(board);
 
         var validMove = board.isValidMove(dummyCell);
         if (!validMove) {
