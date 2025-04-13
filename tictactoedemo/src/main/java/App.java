@@ -33,16 +33,17 @@ public class App {
 
         var game = gameController.startGame(3, players, winningStrategies);
 
-        var sc = new Scanner(System.in);
-        while (game.getGameState().equals(GameState.IN_PROGRESS)) {
-            gameController.printBoard(game);
-            gameController.makeMove(game);
+        try (var sc = new Scanner(System.in)) {
+            while (game.getGameState().equals(GameState.IN_PROGRESS)) {
+                gameController.printBoard(game);
+                gameController.makeMove(game);
 
-            System.out.println("Do you want to do y/n");
-            var undoAns = sc.next();
+                System.out.println("Do you want to do y/n");
+                var undoAns = sc.next();
 
-            if (undoAns.equalsIgnoreCase("y"))
-                gameController.undoMove(game);
+                if (undoAns.equalsIgnoreCase("y"))
+                    gameController.undoMove(game);
+            }
         }
 
         game.printBoard();
