@@ -48,7 +48,7 @@ public class Game {
         Move move = new Move(currPlayer, boardCell);
         moves.add(move);
 
-        nextPlayerTurnIndex = nextPlayer(nextPlayerTurnIndex);
+        nextPlayerTurnIndex = (nextPlayerTurnIndex + 1) % players.size();
 
         // Check if this is a winning move
         if (checkWinner(move)) {
@@ -58,14 +58,6 @@ public class Game {
             gameState = GameState.DRAW;
         }
 
-    }
-
-    public int nextPlayer(int currPlayer) {
-        var nextPlayer = currPlayer + 1;
-        if (nextPlayer == players.size())
-            return 0;
-        else
-            return nextPlayer;
     }
 
     public boolean checkWinner(Move move) {
