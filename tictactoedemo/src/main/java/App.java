@@ -19,7 +19,6 @@ public class App {
         List<Player> players = new ArrayList<>();
         players.add(new Player("Anshul", new Symbol('A', null), PlayerType.HUMAN));
         players.add(new Player("Rahul", new Symbol('R', null), PlayerType.HUMAN));
-        players.add(new Player("Rakesh", new Symbol('H', null), PlayerType.HUMAN));
 
         var gameController = new GameController();
 
@@ -29,16 +28,16 @@ public class App {
         winningStrategies.add(new DiagonalWinningStrategy());
         winningStrategies.add(new RowWinningStrategy());
 
-        var game = gameController.startGame(4, players, winningStrategies);
+        var game = gameController.startGame(3, players, winningStrategies);
 
         while (game.getGameState().equals(GameState.IN_PROGRESS)) {
-            // Show the board
-
-            // Tell whose turn it is
-
-            // execute the move
+            gameController.printBoard(game);
+            gameController.makeMove(game);
         }
 
-        System.out.println("Game Created");
+        if (game.getGameState().equals(GameState.ENDED))
+            System.out.println("Winner is " + game.getWinner());
+        else
+            System.out.println("Game is draw");
     }
 }

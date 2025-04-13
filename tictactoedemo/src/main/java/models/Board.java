@@ -3,6 +3,8 @@ package main.java.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.enums.CellState;
+
 public class Board {
     private List<List<Cell>> board;
     private int dimension;
@@ -22,8 +24,15 @@ public class Board {
     public void print() {
         for (int i = 0; i < board.size(); i++) {
             for (int j = 0; j < board.get(i).size(); j++) {
-                System.out.print("");
+                var cell = board.get(i).get(j);
+
+                if (cell.getCellState().equals(CellState.EMPTY))
+                    System.out.print("| |");
+                else
+                    System.out.print("|" + cell.getPlayer().getSymbol().getSymbolChar() + "|");
             }
+
+            System.out.println("");
         }
     }
 

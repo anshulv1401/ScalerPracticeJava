@@ -30,7 +30,7 @@ public class Game {
 
     public void makeMove() {
         var currPlayer = players.get(nextPlayerTurnIndex);
-        System.out.println("Player " + currPlayer.getSymbol() + "'s turn");
+        System.out.println("It's " + currPlayer.getName() + "'s turn");
 
         var dummyCell = currPlayer.chooseCellToPlay();
 

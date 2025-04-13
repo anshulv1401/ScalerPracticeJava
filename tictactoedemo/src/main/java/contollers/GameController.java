@@ -19,8 +19,8 @@ public class GameController {
                 .build();
     }
 
-    public void makeMove() {
-
+    public void makeMove(Game game) {
+        game.makeMove();
     }
 
     public void undoMove() {
@@ -28,6 +28,6 @@ public class GameController {
     }
 
     public void printBoard(Game game) {
-
+        game.printBoard();
     }
 }

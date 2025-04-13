@@ -17,13 +17,17 @@ public class DiagonalWinningStrategy implements WinningStrategy {
         int col = move.getCell().getCol();
         var symbol = move.getPlayer().getSymbol();
 
-        if (row == col)
+        if (row == col) {
             leftDiagMap.put(symbol, leftDiagMap.getOrDefault(symbol, 0) + 1);
-
-        if (row + col == dimension - 1)
+            if (leftDiagMap.get(symbol) == dimension)
+                return true;
+        }
+        if (row + col == dimension - 1) {
             rightDiagMap.put(symbol, rightDiagMap.getOrDefault(symbol, 0) + 1);
+            if (rightDiagMap.get(symbol) == dimension)
+                return true;
+        }
 
-        return leftDiagMap.get(symbol) == dimension || rightDiagMap.get(symbol) == dimension;
+        return false;
     }
-
 }
