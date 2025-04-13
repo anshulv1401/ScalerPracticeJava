@@ -30,4 +30,14 @@ public class ColumnWinningStrategy implements WinningStrategy {
         return false;
     }
 
+    @Override
+    public void handleUndo(Move move, int dimension) {
+        int col = move.getCell().getCol();
+        var symbol = move.getPlayer().getSymbol();
+
+        var colMap = colHashMaps.get(col);
+
+        colMap.put(symbol, colMap.get(symbol) - 1);
+    }
+
 }

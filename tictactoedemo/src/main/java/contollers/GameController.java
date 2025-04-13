@@ -23,8 +23,8 @@ public class GameController {
         game.makeMove();
     }
 
-    public void undoMove() {
-
+    public void undoMove(Game game) {
+        game.undoMove();
     }
 
     public void printBoard(Game game) {

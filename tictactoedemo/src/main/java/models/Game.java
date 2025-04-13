@@ -57,7 +57,28 @@ public class Game {
         } else if (moves.size() == (board.getDimension() * board.getDimension())) {
             gameState = GameState.DRAW;
         }
+    }
 
+    public void undoMove() {
+        if (moves.size() == 0) {
+            System.out.println("There are no moves on the board, undo not possible");
+        }
+
+        /*
+         * Remove the last move from the list
+         * Remove the move from the board, make the cell empty
+         */
+
+        var lastMove = moves.remove(moves.size() - 1);
+
+        var boardCell = board.getBoard().get(lastMove.getCell().getRow()).get(lastMove.getCell().getCol());
+
+        boardCell.setCellState(CellState.EMPTY);
+        boardCell.setPlayer(null);
+
+        nextPlayerTurnIndex = (nextPlayerTurnIndex - 1 + players.size()) % players.size();
+
+        handleUndo(lastMove);
     }
 
     public boolean checkWinner(Move move) {
@@ -68,6 +89,13 @@ public class Game {
             }
         }
         return false;
+    }
+
+    public void handleUndo(Move move) {
+
+        for (WinningStrategy winningStrategy : winningStrategies) {
+            winningStrategy.handleUndo(move, board.getDimension());
+        }
     }
 
     public void printBoard() {

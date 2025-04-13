@@ -2,6 +2,7 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import main.java.contollers.GameController;
 import main.java.enums.BotDifficultyLevel;
@@ -32,9 +33,16 @@ public class App {
 
         var game = gameController.startGame(3, players, winningStrategies);
 
+        var sc = new Scanner(System.in);
         while (game.getGameState().equals(GameState.IN_PROGRESS)) {
             gameController.printBoard(game);
             gameController.makeMove(game);
+
+            System.out.println("Do you want to do y/n");
+            var undoAns = sc.next();
+
+            if (undoAns.equalsIgnoreCase("y"))
+                gameController.undoMove(game);
         }
 
         game.printBoard();
