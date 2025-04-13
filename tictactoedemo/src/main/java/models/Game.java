@@ -64,7 +64,7 @@ public class Game {
     public boolean checkWinner(Move move) {
 
         for (WinningStrategy winningStrategy : winningStrategies) {
-            if (winningStrategy.checkWinner(move)) {
+            if (winningStrategy.checkWinner(move, board.getDimension())) {
                 return true;
             }
         }
