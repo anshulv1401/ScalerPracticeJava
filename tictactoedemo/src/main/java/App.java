@@ -36,7 +36,7 @@ public class App {
         }
 
         if (game.getGameState().equals(GameState.ENDED))
-            System.out.println("Winner is " + game.getWinner());
+            System.out.println("Winner is " + game.getWinner().getName());
         else
             System.out.println("Game is draw");
     }
