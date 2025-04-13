@@ -22,4 +22,12 @@ public class GameController {
     public void makeMove() {
 
     }
+
+    public void undoMove() {
+
+    }
+
+    public void printBoard(Game game) {
+
+    }
 }

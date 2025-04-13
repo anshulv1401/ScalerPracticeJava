@@ -1,5 +1,7 @@
 package main.java.models;
 
+import java.util.Scanner;
+
 import main.java.enums.PlayerType;
 
 public class Player {
@@ -7,6 +9,7 @@ public class Player {
     private String name;
     private Symbol symbol;
     private PlayerType playerType;
+    private Scanner scanner = new Scanner(System.in);
 
     public Player(String name, Symbol symbol, PlayerType playerType) {
         this.name = name;
@@ -14,8 +17,14 @@ public class Player {
         this.playerType = playerType;
     }
 
-    public Move makeMove() {
-        return null;
+    public Cell chooseCellToPlay() {
+
+        System.out.println("Enter the row number where you want to play?");
+        var inputRow = scanner.nextInt();
+        System.out.println("Enter the col number where you want to play?");
+        var inputCol = scanner.nextInt();
+
+        return new Cell(inputRow, inputCol);
     }
 
     // #region Getter and setters

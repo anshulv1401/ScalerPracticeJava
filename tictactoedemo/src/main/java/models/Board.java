@@ -19,6 +19,23 @@ public class Board {
         }
     }
 
+    public void print() {
+        for (int i = 0; i < board.size(); i++) {
+            for (int j = 0; j < board.get(i).size(); j++) {
+                System.out.print("");
+            }
+        }
+    }
+
+    public boolean isValidMove(Cell cell) {
+        if (cell.getRow() < 0 || cell.getRow() >= dimension || cell.getCol() < 0 || cell.getCol() >= dimension) {
+            return false;
+        }
+        return board.get(cell.getRow()).get(cell.getCol()).isEmpty();
+    }
+
+    // #region Getter and setter
+
     public List<List<Cell>> getBoard() {
         return board;
     }
@@ -34,4 +51,6 @@ public class Board {
     public void setDimension(int dimenstion) {
         this.dimension = dimenstion;
     }
+
+    // #endregion
 }

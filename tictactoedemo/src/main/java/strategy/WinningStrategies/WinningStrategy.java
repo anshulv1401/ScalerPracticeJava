@@ -1,7 +1,7 @@
 package main.java.strategy.WinningStrategies;
 
-import main.java.models.Player;
+import main.java.models.Move;
 
 public interface WinningStrategy {
-    Player checkWinner();
+    boolean checkWinner(Move move);
 }

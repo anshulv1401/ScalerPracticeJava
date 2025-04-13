@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.java.contollers.GameController;
+import main.java.enums.GameState;
 import main.java.enums.PlayerType;
-import main.java.models.Game;
 import main.java.models.Player;
 import main.java.models.Symbol;
 import main.java.strategy.WinningStrategies.ColumnWinningStrategy;
@@ -29,7 +29,15 @@ public class App {
         winningStrategies.add(new DiagonalWinningStrategy());
         winningStrategies.add(new RowWinningStrategy());
 
-        gameController.startGame(4, players, winningStrategies);
+        var game = gameController.startGame(4, players, winningStrategies);
+
+        while (game.getGameState().equals(GameState.IN_PROGRESS)) {
+            // Show the board
+
+            // Tell whose turn it is
+
+            // execute the move
+        }
 
         System.out.println("Game Created");
     }

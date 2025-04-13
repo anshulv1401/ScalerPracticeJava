@@ -1,11 +1,11 @@
 package main.java.strategy.WinningStrategies;
 
-import main.java.models.Player;
+import main.java.models.Move;
 
 public class RowWinningStrategy implements WinningStrategy {
 
     @Override
-    public Player checkWinner() {
+    public boolean checkWinner(Move move) {
         throw new UnsupportedOperationException("Unimplemented method 'checkWinner'");
     }
 

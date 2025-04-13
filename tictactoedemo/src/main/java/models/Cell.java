@@ -15,6 +15,12 @@ public class Cell {
         this.player = null;
     }
 
+    public boolean isEmpty() {
+        return cellState.equals(CellState.EMPTY);
+    }
+
+    // #region Getter setter
+
     public int getRow() {
         return row;
     }
@@ -46,5 +52,7 @@ public class Cell {
     public void setCellState(CellState cellState) {
         this.cellState = cellState;
     }
+
+    // #endregion
 
 }

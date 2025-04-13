@@ -3,6 +3,7 @@ package main.java.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.enums.CellState;
 import main.java.enums.GameState;
 import main.java.enums.PlayerType;
 import main.java.exceptions.PlayerCountNotValidException;
@@ -27,9 +28,58 @@ public class Game {
         this.winningStrategies = winningStrategies;
     }
 
+    public void makeMove() {
+        var currPlayer = players.get(nextPlayerTurnIndex);
+        System.out.println("Player " + currPlayer.getSymbol() + "'s turn");
+
+        var dummyCell = currPlayer.chooseCellToPlay();
+
+        var validMove = board.isValidMove(dummyCell);
+        if (!validMove) {
+            System.out.println("Its an invlid move, please choose again?");
+            return;
+        }
+
+        var boardCell = board.getBoard().get(dummyCell.getRow()).get(dummyCell.getCol());
+
+        boardCell.setCellState(CellState.FILLED);
+        boardCell.setPlayer(currPlayer);
+
+        Move move = new Move(currPlayer, boardCell);
+        moves.add(move);
+
+        // update next player
+        nextPlayerTurnIndex++;
+
+        // Check if this is a winning move
+        if (checkWinner(move)) {
+            winner = currPlayer;
+            gameState = GameState.ENDED;
+        } else if (moves.size() == (board.getDimension() * board.getDimension())) {
+            gameState = GameState.DRAW;
+        }
+
+    }
+
+    public boolean checkWinner(Move move) {
+
+        for (WinningStrategy winningStrategy : winningStrategies) {
+            if (winningStrategy.checkWinner(move)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void printBoard() {
+        board.print();
+    }
+
     public static Builder getBuilder() {
         return new Builder();
     }
+
+    // #region getter & setters
 
     public Board getBoard() {
         return board;
@@ -79,16 +129,9 @@ public class Game {
         this.gameState = gameState;
     }
 
-    public Player checkWinner(Move move) {
-        // // algo to check the winner along the rows, cols, diag
-        // for (WinningStrategy winningStrategy : winningStrategies) {
-        // if (winningStrategy.checkWinner(move, board.getDimension())) {
-        // return true;
-        // }
-        // }
-        // return false;
-        return null;
-    }
+    // #endregion
+
+    // #region Builder
 
     public static class Builder {
 
@@ -137,4 +180,6 @@ public class Game {
             return this;
         }
     }
+
+    // #endregion
 }
