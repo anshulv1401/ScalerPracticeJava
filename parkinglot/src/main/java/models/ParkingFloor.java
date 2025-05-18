@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ParkingFloor extends BaseModel {
     private int floorNumber;
-
     private List<ParkingSpot> parkingSpots;
+    private List<Gate> gates;
 
     public int getFloorNumber() {
         return floorNumber;
@@ -21,6 +21,14 @@ public class ParkingFloor extends BaseModel {
 
     public void setParkingSpots(List<ParkingSpot> parkingSpots) {
         this.parkingSpots = parkingSpots;
+    }
+
+    public List<Gate> getGates() {
+        return gates;
+    }
+
+    public void setGates(List<Gate> gates) {
+        this.gates = gates;
     }
 
 }

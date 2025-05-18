@@ -8,7 +8,6 @@ import models.enums.SpotAssignmentStrategyType;
 public class ParkingLot extends BaseModel {
     private List<ParkingFloor> ParkingFloors;
     private ParkingLotStatus parkingLostStatus;
-    private List<Gate> gates;
     private ParkingLotManager parkingLotManager;
     private String Address;
     private int capacity;
@@ -22,20 +21,12 @@ public class ParkingLot extends BaseModel {
         ParkingFloors = parkingFloors;
     }
 
-    public ParkingLotStatus getParkingLostStatus() {
+    public ParkingLotStatus getParkingLotStatus() {
         return parkingLostStatus;
     }
 
-    public void setParkingLostStatus(ParkingLotStatus parkingLostStatus) {
+    public void setParkingLotStatus(ParkingLotStatus parkingLostStatus) {
         this.parkingLostStatus = parkingLostStatus;
-    }
-
-    public List<Gate> getGates() {
-        return gates;
-    }
-
-    public void setGates(List<Gate> gates) {
-        this.gates = gates;
     }
 
     public ParkingLotManager getParkingLotManager() {

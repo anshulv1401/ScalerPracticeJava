@@ -8,6 +8,7 @@ import models.enums.TicketStatus;
 import models.enums.VehicleType;
 import repositories.GateRepository;
 import repositories.ParkingLotRepository;
+import repositories.ParkingSpotRepository;
 import repositories.TicketRepository;
 import repositories.VehicleRepository;
 
@@ -17,13 +18,16 @@ public class TicketService {
     private VehicleRepository vehicleRepository;
     private ParkingLotRepository parkingLotRepository;
     private TicketRepository ticketRepository;
+    private ParkingSpotRepository parkingSpotRepository;
 
     public TicketService(GateRepository gateRepository, VehicleRepository vehicleRepository,
-            ParkingLotRepository parkingLotRepository, TicketRepository ticketRepository) {
+            ParkingLotRepository parkingLotRepository, TicketRepository ticketRepository,
+            ParkingSpotRepository parkingSpotRepository) {
         this.gateRepository = gateRepository;
         this.vehicleRepository = vehicleRepository;
         this.parkingLotRepository = parkingLotRepository;
         this.ticketRepository = ticketRepository;
+        this.parkingSpotRepository = parkingSpotRepository;
     }
 
     public Ticket issueTicket(Long gateId,
@@ -71,7 +75,7 @@ public class TicketService {
         var strategyType = parkingLot.getSpotAssignmentStrategy();
 
         // based on the type, get the corresponding algo
-        var strategy = SpotAsssignmentFactory.getSpotAssignmentStrategy(strategyType);
+        var strategy = SpotAsssignmentFactory.getSpotAssignmentStrategy(strategyType, parkingSpotRepository);
         var parkingSpot = strategy.assignSpot(vehicleType, optionalGate.get());
 
         ticket.setParkingSpot(parkingSpot);
