@@ -1,5 +1,7 @@
 package models.enums;
 
-public class ParkingSpotStatus {
-
+public enum ParkingSpotStatus {
+    OCCUPIED,
+    AVAILABLE,
+    SUSPENDED
 }

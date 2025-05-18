@@ -1,5 +1,8 @@
 package models.enums;
 
-public class PaymentMode {
-
+public enum PaymentMode {
+    UPI,
+    CC,
+    DD,
+    NET_BANKING
 }

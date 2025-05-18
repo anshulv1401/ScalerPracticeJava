@@ -1,7 +1,7 @@
 package models.enums;
 
-public enum PaymentStatus {
+public enum BillStatus {
     PENDING,
-    SUCCESSFUL,
+    PAID,
     FAILED
 }

@@ -1,5 +1,12 @@
 package models.enums;
 
-public class VehicleType {
-
+public enum VehicleType {
+    TWO_WHEELER,
+    SEDAM,
+    SUV,
+    TRUCK,
+    HATCHBACK,
+    LARGE_VEHICLE,
+    AEROPLANE,
+    TRAIN
 }

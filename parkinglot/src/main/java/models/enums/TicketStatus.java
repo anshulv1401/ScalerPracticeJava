@@ -1,5 +1,6 @@
 package models.enums;
 
-public class TicketStatus {
-
+public enum TicketStatus {
+    VALID,
+    INVALID
 }
