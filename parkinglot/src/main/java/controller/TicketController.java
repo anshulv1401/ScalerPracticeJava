@@ -19,7 +19,7 @@ public class TicketController {
         var response = new IssueTicketResponseDto();
         try {
             var ticket = ticketService.issueTicket(request.getGateId(), request.getVehicleNumber(),
-                    request.getVehiceleOwnerName(), request.getVehicleType());
+                    request.getVehiceleOwnerName(), request.getVehicleType(), request.getParkingLotId());
 
             response.setTicket(ticket);
             response.setResponseStatus(ResponseStatus.SUCCESS);

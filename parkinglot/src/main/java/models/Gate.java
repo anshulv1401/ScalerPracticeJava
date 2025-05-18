@@ -6,7 +6,7 @@ import models.enums.GateType;
 public class Gate extends BaseModel {
 
     private int GateNumber;
-    private int currentOperator;
+    private Operator currentOperator;
     private GateType gateType;
     private GateStatus gateStatus;
 
@@ -18,11 +18,11 @@ public class Gate extends BaseModel {
         GateNumber = gateNumber;
     }
 
-    public int getCurrentOperator() {
+    public Operator getCurrentOperator() {
         return currentOperator;
     }
 
-    public void setCurrentOperator(int currentOperator) {
+    public void setCurrentOperator(Operator currentOperator) {
         this.currentOperator = currentOperator;
     }
 

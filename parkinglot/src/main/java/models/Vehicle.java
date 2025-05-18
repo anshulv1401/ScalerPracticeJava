@@ -4,7 +4,7 @@ import models.enums.VehicleType;
 
 public class Vehicle extends BaseModel {
     private String vehicleNumber;
-    private Owner owner;
+    private String owner;
     private VehicleType vehicleType;
 
     public String getVehicleNumber() {
@@ -15,11 +15,11 @@ public class Vehicle extends BaseModel {
         this.vehicleNumber = vehicleNumber;
     }
 
-    public Owner getOwner() {
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner(Owner owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 

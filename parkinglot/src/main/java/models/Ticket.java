@@ -1,13 +1,11 @@
 package models;
 
-import java.util.Date;
-
 import models.enums.TicketStatus;
 
 public class Ticket extends BaseModel {
     private String tickerNumber;
     private Gate generatedAt;
-    private Date entryTime;
+    private long entryTime;
     private Operator generatedBy;
     private Vehicle vehicle;
     private ParkingSpot parkingSpot;
@@ -29,11 +27,11 @@ public class Ticket extends BaseModel {
         this.generatedAt = generatedAt;
     }
 
-    public Date getEntryTime() {
+    public long getEntryTime() {
         return entryTime;
     }
 
-    public void setEntryTime(Date entryTime) {
+    public void setEntryTime(long entryTime) {
         this.entryTime = entryTime;
     }
 

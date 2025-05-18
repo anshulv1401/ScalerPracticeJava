@@ -1,11 +1,9 @@
 package models;
 
-import java.util.Date;
-
 public class BaseModel {
     private int id;
-    private Date createdAt;
-    private Date lastModifiedAt;
+    private long createdAt;
+    private long lastModifiedAt;
 
     public int getId() {
         return id;
@@ -15,19 +13,19 @@ public class BaseModel {
         this.id = id;
     }
 
-    public Date getCreatedAt() {
+    public long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getLastModifiedAt() {
+    public long getLastModifiedAt() {
         return lastModifiedAt;
     }
 
-    public void setLastModifiedAt(Date lastModifiedAt) {
+    public void setLastModifiedAt(long lastModifiedAt) {
         this.lastModifiedAt = lastModifiedAt;
     }
 

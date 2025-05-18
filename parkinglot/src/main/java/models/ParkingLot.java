@@ -3,6 +3,7 @@ package models;
 import java.util.List;
 
 import models.enums.ParkingLotStatus;
+import models.enums.SpotAssignmentStrategyType;
 
 public class ParkingLot extends BaseModel {
     private List<ParkingFloor> ParkingFloors;
@@ -11,6 +12,7 @@ public class ParkingLot extends BaseModel {
     private ParkingLotManager parkingLotManager;
     private String Address;
     private int capacity;
+    private SpotAssignmentStrategyType spotAssignmentStrategy;
 
     public List<ParkingFloor> getParkingFloors() {
         return ParkingFloors;
@@ -58,6 +60,14 @@ public class ParkingLot extends BaseModel {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public SpotAssignmentStrategyType getSpotAssignmentStrategy() {
+        return spotAssignmentStrategy;
+    }
+
+    public void setSpotAssignmentStrategy(SpotAssignmentStrategyType spotAssignmentStrategy) {
+        this.spotAssignmentStrategy = spotAssignmentStrategy;
     }
 
 }

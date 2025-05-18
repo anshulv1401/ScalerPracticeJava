@@ -7,6 +7,7 @@ public class IssueTickerRequestDto {
     private String vehicleNumber;
     private String vehiceleOwnerName;
     private Long gateId;
+    private Long ParkingLotId;
 
     public VehicleType getVehicleType() {
         return vehicleType;
@@ -38,6 +39,14 @@ public class IssueTickerRequestDto {
 
     public void setGateId(Long gateId) {
         this.gateId = gateId;
+    }
+
+    public Long getParkingLotId() {
+        return ParkingLotId;
+    }
+
+    public void setParkingLotId(Long parkingLotId) {
+        ParkingLotId = parkingLotId;
     }
 
 }
