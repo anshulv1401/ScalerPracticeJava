@@ -1,5 +1,13 @@
 package dev.anshul.bookmyshow.models;
 
-public class Theatre {
+import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class Theatre extends BaseModel {
+    private String theatreName;
+    private List<Screen> screens;
 }
