@@ -4,7 +4,6 @@ import dev.anshul.bookmyshow.models.emuns.ShowSeatStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +13,7 @@ import lombok.Setter;
 @Entity
 public class ShowSeat extends BaseModel {
 
-    @ManyToMany
+    @ManyToOne
     private Show show;
 
     @ManyToOne
