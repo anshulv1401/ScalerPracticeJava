@@ -3,7 +3,6 @@ package dev.anshul.bookmyshow.models;
 import java.util.List;
 
 import dev.anshul.bookmyshow.models.emuns.Feature;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -21,7 +20,6 @@ public class Screen extends BaseModel {
     private List<Seat> seats;
 
     @Enumerated(EnumType.ORDINAL)
-    @ElementCollection
     private List<Feature> features;
 
     private Long capacity;
