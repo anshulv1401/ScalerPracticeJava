@@ -16,7 +16,8 @@ public class Group extends BaseModel {
     private String name;
     private String description;
 
-    @ManyToMany
+    // @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany()
     private List<User> mumbers;
 
     @OneToMany
@@ -25,3 +26,9 @@ public class Group extends BaseModel {
     @OneToMany(mappedBy = "group")
     private List<Expense> expenses;
 }
+
+// when, you have a list attribute inside a model, spring doesn't fetch it
+// eagerly
+
+// List lazy
+// Primitive type

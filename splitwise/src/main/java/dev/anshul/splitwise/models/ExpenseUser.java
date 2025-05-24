@@ -16,6 +16,9 @@ public class ExpenseUser extends BaseModel {
     @ManyToOne
     private User user;
 
+    @ManyToOne
+    private Expense expense;
+
     @Enumerated(EnumType.ORDINAL)
     private ExpenseUserType expenseUserType;
     private String currency;

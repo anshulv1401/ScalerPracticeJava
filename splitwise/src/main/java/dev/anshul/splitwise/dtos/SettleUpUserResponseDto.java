@@ -2,7 +2,7 @@ package dev.anshul.splitwise.dtos;
 
 import java.util.List;
 
-import dev.anshul.splitwise.CustomObjects.TransactionDto;
+import dev.anshul.splitwise.CustomObjects.Transaction;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,5 +12,5 @@ My system will return all the expenses where I am involved and suggest me the li
 @Getter
 @Setter
 public class SettleUpUserResponseDto {
-    List<TransactionDto> transactions;
+    List<Transaction> transactions;
 }

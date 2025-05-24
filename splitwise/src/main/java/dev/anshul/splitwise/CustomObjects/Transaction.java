@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TransactionDto {
+public class Transaction {
 
     private User from;
     private User to;

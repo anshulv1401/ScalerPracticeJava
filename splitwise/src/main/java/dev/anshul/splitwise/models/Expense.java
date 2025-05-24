@@ -23,7 +23,7 @@ public class Expense extends BaseModel {
     @ManyToOne
     private User addedBy;
 
-    @OneToMany
+    @OneToMany(mappedBy = "expense")
     private List<ExpenseUser> expenseUsers;
 
     @Enumerated(EnumType.ORDINAL)
