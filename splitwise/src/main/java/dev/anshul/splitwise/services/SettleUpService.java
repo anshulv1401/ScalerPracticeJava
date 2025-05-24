@@ -1,13 +1,12 @@
 package dev.anshul.splitwise.services;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import dev.anshul.splitwise.CustomObjects.Transaction;
+import dev.anshul.splitwise.customObjects.Transaction;
 import dev.anshul.splitwise.models.Expense;
 import dev.anshul.splitwise.repositories.ExpenseRepository;
 import dev.anshul.splitwise.repositories.ExpenseUserRepository;

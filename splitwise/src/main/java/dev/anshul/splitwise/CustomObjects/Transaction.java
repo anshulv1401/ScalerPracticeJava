@@ -1,4 +1,4 @@
-package dev.anshul.splitwise.CustomObjects;
+package dev.anshul.splitwise.customObjects;
 
 import dev.anshul.splitwise.models.User;
 import lombok.Getter;

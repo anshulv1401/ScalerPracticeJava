@@ -2,7 +2,7 @@ package dev.anshul.splitwise.dtos;
 
 import java.util.List;
 
-import dev.anshul.splitwise.CustomObjects.Transaction;
+import dev.anshul.splitwise.customObjects.Transaction;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import dev.anshul.splitwise.CustomObjects.Transaction;
+import dev.anshul.splitwise.customObjects.Transaction;
 import dev.anshul.splitwise.models.Expense;
 import dev.anshul.splitwise.models.ExpenseUser;
 import dev.anshul.splitwise.models.ExpenseUserType;

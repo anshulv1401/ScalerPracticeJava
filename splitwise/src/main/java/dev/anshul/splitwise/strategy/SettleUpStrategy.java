@@ -2,7 +2,7 @@ package dev.anshul.splitwise.strategy;
 
 import java.util.List;
 
-import dev.anshul.splitwise.CustomObjects.Transaction;
+import dev.anshul.splitwise.customObjects.Transaction;
 import dev.anshul.splitwise.models.Expense;
 import dev.anshul.splitwise.models.ExpenseUser;
 import dev.anshul.splitwise.models.User;
